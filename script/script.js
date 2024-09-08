@@ -2,6 +2,8 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 
 const firstPassword = document.getElementById('password-one');
 const secondPassword = document.getElementById('password-two');
+const slider = document.getElementById("myRange");
+const sliderValue = document.getElementById("sliderValue");
 
 function randomPassword(length){
     let passwordOne = '';
@@ -16,10 +18,20 @@ function randomPassword(length){
     secondPassword.textContent = passwordTwo;
 }
 
+slider.oninput = function() {
+    sliderValue.style.display = 'inline-block';
+    sliderValue.innerHTML = this.value;
+
+    const percent = (this.value - this.min) / (this.max - this.min);
+    const valuePosition = percent * (this.offsetWidth - 25);
+
+    sliderValue.style.left = valuePosition + "px";
+};
+
 document.getElementById('generate').addEventListener('click', () => {
     randomPassword(15);
+    sliderValue.style.display = 'none';
 });
 
 /* Functionality need to be added */
-// 1. Customize the password length
 // 2. Add checkboxes to allow users to select which types of characters to include in their passwords (e.g., uppercase, lowercase, numbers, special characters).

@@ -60,6 +60,57 @@ button{
     border-bottom: 3px solid #9F87AF;
 }
 
+.slider-container{
+    position: relative;
+    width: 100%;
+    margin-block: 1em;
+}
+
+
+.slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider-value {
+    display: none;
+    position: absolute;
+    top: 0px;
+    background-color: #FFD400;
+    color: #541388;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 30px;
+    text-align: center;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: #FFD400;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.slider::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #FFD400;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 /* buttons */
 
 .btn{
