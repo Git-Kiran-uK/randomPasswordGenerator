@@ -1,2 +1,2 @@
-# Random Password Generator
- Simple random password generator created using HTML, CSS and JavaScript.
+# Random Password Generator Extension
+ Simple random password generator Extension created using HTML, CSS and JavaScript.
