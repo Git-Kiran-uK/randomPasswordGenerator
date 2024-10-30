@@ -1,36 +1,31 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"];
+import randomPassword from "./randomPassword.mjs";
 
 const firstPassword = document.getElementById('password-one');
 const secondPassword = document.getElementById('password-two');
-const slider = document.getElementById("myRange");
-const sliderValue = document.getElementById("sliderValue");
+const sliderValueEl = document.querySelector('.slider-value');
+const sliderEl = document.querySelector('.slider');
 
-function randomPassword(length){
-    let passwordOne = '';
-    let passwordTwo = '';
-
-    for(let i = 0; i < length; i++){
-        passwordOne += characters[Math.floor(Math.random() * characters.length)];
-        passwordTwo += characters[Math.floor(Math.random() * characters.length)];
-    }
-
-    firstPassword.textContent = passwordOne;
-    secondPassword.textContent = passwordTwo;
-}
-
-slider.oninput = function() {
-    sliderValue.style.display = 'inline-block';
-    sliderValue.innerHTML = this.value;
-
-    const percent = (this.value - this.min) / (this.max - this.min);
-    const valuePosition = percent * (this.offsetWidth - 25);
-
-    sliderValue.style.left = valuePosition + "px";
-};
+sliderEl.addEventListener('input', () => {
+    let value = sliderEl.value;
+    const sliderRect = sliderEl.getBoundingClientRect();
+    const max = sliderEl.max;
+    const min = sliderEl.min;
+    
+    const thumbWidth = 30;
+    const offsetX = ((value - min) / (max - min)) * (sliderRect.width - thumbWidth) + (thumbWidth / 2);
+    
+    sliderValueEl.textContent = value;
+    
+    sliderValueEl.classList.add('opaque');
+    sliderValueEl.style.left = `${offsetX}px`;
+});
 
 document.getElementById('generate').addEventListener('click', () => {
-    randomPassword(15);
-    sliderValue.style.display = 'none';
+    const length = sliderEl.value;
+    const [passwordOne, passwordTwo] = randomPassword(length);
+    firstPassword.textContent = passwordOne;
+    secondPassword.textContent = passwordTwo;
+    sliderValueEl.classList.remove('opaque');
 });
 
 /* Functionality need to be added */
