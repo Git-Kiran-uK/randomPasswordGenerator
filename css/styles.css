@@ -63,7 +63,7 @@ button{
 .slider-container {
     position: relative;
     width: 100%;
-    margin-block: 1em;
+    margin-block: 1.5em;
 }
 
 .slider-value-container {
@@ -79,7 +79,7 @@ button{
     font-weight: 600;
     height: 30px;
     width: 30px;
-    bottom: -75px;
+    top: -45px;
     left: 3%;
     transform: translateX(-50%);
     line-height: 30px;
@@ -103,7 +103,7 @@ button{
     transform: translateX(-50%) rotate(45deg);
     outline: 3px solid #E9F1F7;
     border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-bottom-right-radius: .15em;
     border-top-right-radius: 50%;
     border-top-left-radius: .15em;
     z-index: -1;
@@ -129,6 +129,53 @@ button{
     background-color: #FFD400;
     border: 2px solid #E9F1F7;
     cursor: pointer;
+}
+
+.choice-container{
+    display: flex;
+    gap: .5em;
+    margin-bottom: 1.5em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2em;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #FFD400;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+}
+
+
+input[type="checkbox"],
+label{
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover{
+    background-color: #FFD400;
+}
+
+input[type="checkbox"]:after{
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    font-size: 1.15rem;
+    content: "\f00c";
+    color: #541388;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #FFD400;
 }
 
 /* buttons */

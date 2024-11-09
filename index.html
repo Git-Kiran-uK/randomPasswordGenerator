@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Password Generator</title>
 
     <!-- Meta tags -->
@@ -10,36 +10,70 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Karla:ital,wght@0,800;1,800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Karla:ital,wght@0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="txt-container">
-            <h2>
-                Generate a <br />
-                <span>Random Password</span>
-            </h2>
-            <p>Never use an insecure password again.</p>
-            <button class="btn" id="generate">Generate passwords</button>
-            <div class="slider-container">
-                <div class="slider-value-container">
-                    <span class="slider-value">8</span>
-                </div>
-                <div class="slider-field">
-                    <input class="slider" type="range" min="8" max="18" value="8" step="1">
-                </div>
-            </div>
+      <div class="txt-container">
+        <h2>
+          Generate a <br />
+          <span>Random Password</span>
+        </h2>
+        <p>Never use an insecure password again.</p>
+        <div class="slider-container">
+          <div class="slider-value-container">
+            <span class="slider-value">8</span>
+          </div>
+          <div class="slider-field">
+            <input
+              class="slider"
+              type="range"
+              min="8"
+              max="18"
+              value="8"
+              step="1"
+            />
+          </div>
         </div>
-        <div class="password-container">
-            <p class="password-box" id="password-one"></p>
-            <p class="password-box" id="password-two"></p>
+        <div class="choice-container">
+          <div class="checkbox">
+            <input type="checkbox" id="capital" checked />
+            <label for="capital">A-Z</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="small" checked /><label for="small"
+              >a-z</label
+            >
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="numerics" checked /><label for="numerics"
+              >0-9</label
+            >
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="special" checked /><label for="special"
+              >!@#$%^&*</label
+            >
+          </div>
         </div>
+        <button class="btn" id="generate">Generate passwords</button>
+      </div>
+      <div class="password-container">
+        <p class="password-box" id="password-one"></p>
+        <p class="password-box" id="password-two"></p>
+      </div>
     </div>
 
     <!-- Custom JavaScript -->
     <script src="./script/script.js" type="module"></script>
-</body>
+  </body>
 </html>
