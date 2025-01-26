@@ -4,6 +4,7 @@ const firstPassword = document.getElementById('password-one');
 const secondPassword = document.getElementById('password-two');
 const sliderValueEl = document.querySelector('.slider-value');
 const sliderEl = document.querySelector('.slider');
+const checkboxes = document.querySelectorAll('[type="checkbox"]');
 
 sliderEl.addEventListener('input', () => {
     let value = sliderEl.value;
@@ -22,7 +23,9 @@ sliderEl.addEventListener('input', () => {
 
 document.getElementById('generate').addEventListener('click', () => {
     const length = sliderEl.value;
-    const [passwordOne, passwordTwo] = randomPassword(length);
+    let variety  = '';
+    checkboxes.forEach(checkbox => variety += checkbox.getAttribute('data-value'));
+    const [passwordOne, passwordTwo] = randomPassword(length, variety);
     firstPassword.textContent = passwordOne;
     secondPassword.textContent = passwordTwo;
     sliderValueEl.classList.remove('opaque');
