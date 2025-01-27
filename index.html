@@ -7,6 +7,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/key.png" type="image/png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,21 +49,21 @@
         </div>
         <div class="choice-container">
           <div class="checkbox-container">
-            <input type="checkbox" id="capital" data-value="uppercase" checked />
+            <input type="checkbox" id="capital" data-value="A-Z" checked />
             <label for="capital">A-Z</label>
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" id="small" data-value="lowercase" checked /><label for="small"
+            <input type="checkbox" id="small" data-value="a-z" checked /><label for="small"
               >a-z</label
             >
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" id="numerics" data-value="digits" checked /><label for="numerics"
+            <input type="checkbox" id="numerics" data-value="0-9" checked /><label for="numerics"
               >0-9</label
             >
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" id="special" data-value="symbols" checked /><label for="special"
+            <input type="checkbox" id="special" data-value="!@#$%^&*" checked /><label for="special"
               >!@#$%^&*</label
             >
           </div>
@@ -71,8 +74,8 @@
         <p class="password-box" id="password-one"></p>
         <p class="password-box" id="password-two"></p>
       </div>
+      <p id="confirmation"></p>
     </div>
-
     <!-- Custom JavaScript -->
     <script src="./script/script.js" type="module"></script>
   </body>

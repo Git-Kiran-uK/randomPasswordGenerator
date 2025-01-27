@@ -3,8 +3,10 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 function randomPassword(length, type){
     let passwordOne = '';
     let passwordTwo = '';
+    const regExp = new RegExp(`[${type}]`);
+    console.log(regExp);
 
-    const filteredChar = characters.filter(char => new RegExp(`[${type}]`).test(char));
+    const filteredChar = characters.filter(char => regExp.test(char));
     console.log(filteredChar);
 
     for(let i = 0; i < length; i++){
